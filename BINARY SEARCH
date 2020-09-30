@@ -1,0 +1,45 @@
+import random
+
+data=[]
+
+for i in range(30):
+  if i%2== False:
+    data.append(i)
+
+print(data)
+target= random.choice(data)
+print(target)
+
+#binary_search_iterative
+def binary_search_interative(data, target):
+  low= 0
+  high= len(data) - 1
+  while low <= high:
+    mid= (low+high) // 2
+    print(mid)
+    if target == data[mid]:
+      print("Found")
+      return True
+    elif target < data[mid]:
+      high= mid - 1
+    else:
+      low= mid + 1
+  return False
+
+
+
+#binary search recursive
+def binary_search_recursive(data, target, low, high):
+  if low > high:
+    return False
+  else:
+    mid= (low+high) // 2
+    if target == data[mid]:
+      print("This one is found as well")
+    elif target < data[mid]:
+      return binary_search_recursive(data, target, low, mid-1)
+    else:
+      return binary_search_recursive(data, target, mid+1, high)
+    
+print(binary_search_interative(data, target))    
+print(binary_search_recursive(data, target, 0, len(data)- 1))
