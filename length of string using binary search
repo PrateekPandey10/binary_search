@@ -1,0 +1,22 @@
+input_str1= "lowerCase"
+input_str2= "LowerCase"
+input_str3= "lowercase"
+
+def find_strlength_iterative(input_str):
+  count=0
+  for i in range(len(input_str)):
+    count += 1
+  return count
+  
+print(find_strlength_iterative(input_str3))
+
+def find_strlength_len(input_str):
+  if input_str== '':
+    return 0
+  return 1 + find_strlength_len(input_str[1:])
+
+print(find_strlength_len(input_str2))
+
+
+
+
