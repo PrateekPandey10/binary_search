@@ -1,0 +1,25 @@
+input_str1= 'LowerCase'
+input_str2= 'lowerCase'
+input_str3= 'lowercase'
+
+def binary_search_iterative(input_str):
+  for i in range(len(input_str)):
+    if input_str[i].isupper():
+      return input_str[i]
+  return("No upper case letter found")
+
+print(binary_search_iterative(input_str1))
+print(binary_search_iterative(input_str2))
+print(binary_search_iterative(input_str3))
+
+def binary_search_recursive(input_str, idx= 0):
+  if input_str[idx].isupper():
+    return input_str[idx]
+  if idx == len(input_str)-1:
+    return "No Upper case letter found"
+  return binary_search_recursive(input_str, idx+1)
+
+
+print(binary_search_recursive(input_str1))
+print(binary_search_recursive(input_str2))
+print(binary_search_recursive(input_str3))  
