@@ -1,0 +1,27 @@
+input_str1= "lowerCase"
+input_str2= "Lets check the values here"
+input_str3= "lowercase"
+vowels= ['a','e','i','o','u']
+
+def find_consonant_iterative(input_str):
+  count= 0
+  for i in range(len(input_str)):
+    if input_str[i].lower() not in vowels and input_str[i].isalpha():
+      count += 1
+  return count
+
+print(find_consonant_iterative(input_str1))
+
+def find_consonant_recursive(input_str):
+  
+  if input_str== '':
+    return 0
+  if input_str[0].lower() not in vowels and input_str[0].isalpha():
+    return 1 + find_consonant_recursive(input_str[1:])
+  else:
+    return find_consonant_recursive(input_str[1:])
+
+print(find_consonant_recursive(input_str2))
+
+
+
